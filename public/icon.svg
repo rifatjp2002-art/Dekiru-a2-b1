@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1e293b" />
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#34d399" />
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <drop-shadow dx="0" dy="8" stdDeviation="12" flood-color="#020617" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+  
+  <!-- Outer border with padding for maskable safety -->
+  <rect width="512" height="512" rx="128" fill="url(#bg)" />
+  
+  <!-- Outer Ring -->
+  <circle cx="256" cy="256" r="180" fill="none" stroke="url(#accent)" stroke-width="12" stroke-linecap="round" opacity="0.85" filter="url(#shadow)" />
+  
+  <!-- Center Kanji Badge -->
+  <circle cx="256" cy="256" r="120" fill="#0f172a" stroke="#1e293b" stroke-width="6" />
+  
+  <!-- Big "日" (Nihon) Kanji character in Cherry/Sky gradient style -->
+  <text x="256" y="310" font-family="'Noto Sans JP', sans-serif" font-weight="900" font-size="160" fill="url(#accent)" text-anchor="middle" letter-spacing="-5">日</text>
+  
+  <!-- Small Cherry Blossom Decorative Icon -->
+  <path d="M 256,90 C 265,110 285,110 280,95 C 275,80 260,85 256,90 Z" fill="#f43f5e" opacity="0.9" />
+  <path d="M 256,90 C 247,110 227,110 232,95 C 237,80 252,85 256,90 Z" fill="#f43f5e" opacity="0.9" />
+</svg>

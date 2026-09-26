@@ -1,0 +1,6 @@
+{
+  "name": "できる日本語 Vocabulary (A2-B1)",
+  "description": "A2-B1 Level Japanese Learning Platform based on できる日本語 Pre-Intermediate (Lessons 1-15) with audio, flashcards, and JLPT timed quiz by Rifat Ahmed.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

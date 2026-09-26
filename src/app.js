@@ -5,7 +5,7 @@
   // App State
   let allWords = [];
   let filteredWords = [];
-  let currentLesson = 0; // 0 = All Lessons
+  let currentLesson = 1; // 1 = Lesson 1 by default
   let searchKeyword = '';
   let activeFilterChip = 'all'; // 'all', 'fav', 'due', 'hard'
   let showFurigana = true;
@@ -17,6 +17,7 @@
   let fcRevealedBn = false;
   let audioSpeed = 0.9;
   let activeTab = 'dashboard'; // 'dashboard', 'list', 'flashcard', 'quiz', 'cando'
+  let wordListVisibleCount = 15; // Number of words rendered at once in list mode (for low RAM phones)
 
   // Flashcard State
   let fcList = [];
@@ -165,7 +166,10 @@
   }
 
   // Filter Vocabulary Based on Filters
-  function filterVocabulary() {
+  function filterVocabulary(resetPagination = true) {
+    if (resetPagination) {
+      wordListVisibleCount = 15;
+    }
     const kw = searchKeyword.toLowerCase().trim();
     const now = Date.now();
 
@@ -264,7 +268,7 @@
 
     if (!container) return;
 
-    badge.textContent = `Showing ${filteredWords.length} of ${allWords.length} words`;
+    badge.textContent = `Showing ${Math.min(wordListVisibleCount, filteredWords.length)} of ${filteredWords.length} words`;
 
     if (filteredWords.length === 0) {
       container.innerHTML = '';
@@ -274,7 +278,9 @@
 
     emptyState.classList.add('hidden');
 
-    const html = filteredWords.map(item => {
+    const visibleWords = filteredWords.slice(0, wordListVisibleCount);
+
+    let html = visibleWords.map(item => {
       const isFav = favorites.has(item.id);
       const srs = srsData[item.id];
       let srsBadge = '';
@@ -345,7 +351,21 @@
       `;
     }).join('');
 
+    if (filteredWords.length > wordListVisibleCount) {
+      html += `
+        <div class="pt-4 text-center pb-8">
+          <button onclick="window.loadMoreWords()" class="w-full py-4 rounded-2xl bg-slate-900 border-2 border-slate-800 hover:border-sky-500/40 text-sky-400 hover:text-sky-300 font-extrabold text-xs transition active:scale-98 flex items-center justify-center space-x-2 shadow-xl hover:shadow-sky-500/5">
+            <span>🔽</span>
+            <span class="font-bangla">আরো শব্দ লোড করুন (Show ${filteredWords.length - wordListVisibleCount} More Words)</span>
+          </button>
+        </div>
+      `;
+    }
+
+    const prevScrollY = window.scrollY;
     container.innerHTML = html;
+    // Restore scroll position after DOM rewrite to prevent jump
+    window.scrollTo(0, prevScrollY);
   }
 
   // Update Header Stats
@@ -1447,8 +1467,16 @@
     `).join('');
   }
 
+  // Persistent tab scroll position cache to remember scroll states
+  const tabScrollPositions = {};
+
   // Global Handlers attached to window
   window.switchTab = function (tab) {
+    // 1. Save scroll position of current tab before switching
+    if (activeTab) {
+      tabScrollPositions[activeTab] = window.scrollY;
+    }
+
     activeTab = tab;
     if (tab !== 'quiz') {
       stopQuizTimer();
@@ -1482,7 +1510,17 @@
     } else if (tab === 'cando') {
       renderCanDoGoals();
     }
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    // 2. Restore scroll position of the target tab
+    const targetScrollY = tabScrollPositions[tab] || 0;
+    setTimeout(() => {
+      window.scrollTo({ top: targetScrollY, behavior: 'auto' });
+    }, 0);
+  };
+
+  window.loadMoreWords = function () {
+    wordListVisibleCount += 15;
+    filterVocabulary(false); // false means keep current pagination limit
   };
 
   window.handleSearchInput = function (val) {
@@ -1528,11 +1566,11 @@
   };
 
   window.resetFilters = function () {
-    currentLesson = 0;
+    currentLesson = 1;
     searchKeyword = '';
     activeFilterChip = 'all';
     const lSelect = document.getElementById('lesson-select');
-    if (lSelect) lSelect.value = '0';
+    if (lSelect) lSelect.value = '1';
     const sInput = document.getElementById('search-input');
     if (sInput) sInput.value = '';
     window.setFilterCategory('all');
@@ -1545,7 +1583,7 @@
       favorites.add(id);
     }
     saveFavorites();
-    filterVocabulary();
+    filterVocabulary(false);
     if (activeTab === 'flashcard') {
       const currentItem = fcList[fcIndex];
       if (currentItem && currentItem.id === id) {

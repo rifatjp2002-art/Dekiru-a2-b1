@@ -16,8 +16,8 @@ export default defineConfig(() => {
         includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'icon.svg'],
         manifest: {
           id: '/',
-          name: 'できる日本語 Vocabulary',
-          short_name: 'NihongoVocab',
+          name: 'Dekiru A2-B1',
+          short_name: 'Dekiru A2-B1',
           description: 'A2-B1 Level Japanese Vocabulary Learning Platform based on できる日本語 Pre-Intermediate with audio, flashcards, and timed quizzes.',
           theme_color: '#0c1222',
           background_color: '#070b14',

@@ -353,7 +353,7 @@
 
     if (filteredWords.length > wordListVisibleCount) {
       html += `
-        <div class="pt-4 text-center pb-8">
+        <div class="pt-4 text-center pb-8 col-span-1 md:col-span-2">
           <button onclick="window.loadMoreWords()" class="w-full py-4 rounded-2xl bg-slate-900 border-2 border-slate-800 hover:border-sky-500/40 text-sky-400 hover:text-sky-300 font-extrabold text-xs transition active:scale-98 flex items-center justify-center space-x-2 shadow-xl hover:shadow-sky-500/5">
             <span>🔽</span>
             <span class="font-bangla">আরো শব্দ লোড করুন (Show ${filteredWords.length - wordListVisibleCount} More Words)</span>
@@ -1329,7 +1329,7 @@
         </div>
 
         ${hardWords.length > 0 ? `
-          <div class="space-y-2 max-h-60 overflow-y-auto pr-1">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-2 max-h-60 overflow-y-auto pr-1">
             ${hardWords.slice(0, 6).map(item => `
               <div class="bg-slate-850 border border-rose-900/40 rounded-xl p-2.5 flex items-center justify-between hover:border-rose-700/60 transition">
                 <div class="flex items-center space-x-2.5">
@@ -1405,7 +1405,7 @@
           </span>
         </div>
 
-        <div class="space-y-2">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
           ${lessonStats.map(ls => `
             <div onclick="window.filterByCanDoLesson(${ls.lesson})" class="cursor-pointer bg-slate-850 hover:bg-slate-800 border border-slate-800 hover:border-slate-700 rounded-xl p-2.5 transition">
               <div class="flex items-center justify-between mb-1 text-xs">
@@ -1991,9 +1991,56 @@
     renderDashboard();
 
     setupPwaEvents();
+    setupKeyboardShortcuts();
 
     // Default to Dashboard view
     window.switchTab('dashboard');
+  }
+
+  // Desktop Keyboard Shortcuts
+  function setupKeyboardShortcuts() {
+    window.addEventListener('keydown', (e) => {
+      // Don't intercept when user is typing in search or form input
+      const tag = document.activeElement ? document.activeElement.tagName : '';
+      if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT') return;
+
+      if (activeTab === 'flashcard') {
+        if (e.code === 'Space') {
+          e.preventDefault();
+          handleCardClick();
+        } else if (e.code === 'ArrowRight') {
+          e.preventDefault();
+          navigateFlashcard(1);
+        } else if (e.code === 'ArrowLeft') {
+          e.preventDefault();
+          navigateFlashcard(-1);
+        } else if (e.key === '1') {
+          e.preventDefault();
+          handleSrsRating('hard');
+        } else if (e.key === '2') {
+          e.preventDefault();
+          handleSrsRating('good');
+        } else if (e.key === '3') {
+          e.preventDefault();
+          handleSrsRating('easy');
+        }
+      } else if (activeTab === 'quiz') {
+        if (['1', '2', '3', '4'].includes(e.key)) {
+          e.preventDefault();
+          const optIdx = parseInt(e.key, 10) - 1;
+          const optBtn = document.getElementById(`quiz-opt-${optIdx}`);
+          if (optBtn && !optBtn.disabled) {
+            optBtn.click();
+          }
+        } else if (e.code === 'Space' || e.code === 'Enter') {
+          const nextBtn = document.getElementById('quiz-btn-next');
+          if (nextBtn && !nextBtn.classList.contains('hidden')) {
+            e.preventDefault();
+            nextQuizQuestion();
+          }
+        }
+      }
+    });
   }
 
   if (document.readyState === 'loading') {

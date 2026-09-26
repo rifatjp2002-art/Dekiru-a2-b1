@@ -1,1 +1,13 @@
 @import "tailwindcss";
+
+@theme {
+  --color-slate-850: #151f32;
+  --color-slate-950: #070b14;
+  --font-japanese: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", "Yu Gothic", sans-serif;
+  --font-bangla: "Hind Siliguri", "Noto Sans Bengali", "SolaimanLipi", sans-serif;
+}
+
+/* Critical base styling ensuring 100% offline styling integrity */
+.hidden {
+  display: none !important;
+}

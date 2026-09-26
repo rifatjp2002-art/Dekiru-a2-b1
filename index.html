@@ -1,0 +1,690 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>できる日本語 Vocabulary (A2-B1)</title>
+    <meta name="description" content="A2-B1 Level Japanese Vocabulary Learning Platform based on できる日本語 Pre-Intermediate (Lessons 1-15) with audio, flashcards, and JLPT timed quiz by Rifat Ahmed." />
+    <meta property="og:title" content="できる日本語 Vocabulary (A2-B1)" />
+    <meta property="og:description" content="A2-B1 Level Japanese Vocabulary Learning Platform based on できる日本語 Pre-Intermediate (Lessons 1-15) with audio, flashcards, and JLPT timed quiz by Rifat Ahmed." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- PWA & Mobile Web App Meta Tags -->
+    <meta name="theme-color" content="#0c1222" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="NihongoVocab" />
+    <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
+    <link rel="icon" type="image/svg+xml" href="./icon.svg" />
+    <link rel="icon" type="image/png" sizes="192x192" href="./pwa-192x192.png" />
+
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              slate: {
+                850: '#151f32',
+                950: '#070b14',
+              },
+            },
+            fontFamily: {
+              japanese: ['"Noto Sans JP"', '"Hiragino Kaku Gothic ProN"', '"Meiryo"', 'sans-serif'],
+              bangla: ['"Hind Siliguri"', '"Noto Sans Bengali"', 'sans-serif'],
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <style>body{color:#f1f5f9;-webkit-tap-highlight-color:transparent;background-color:#070b14;font-family:Noto Sans JP,Hind Siliguri,system-ui,-apple-system,sans-serif}ruby{ruby-align:center;ruby-position:over}rt{color:#38bdf8;-webkit-user-select:text;user-select:text;letter-spacing:.02em;font-size:.52em;font-weight:500;line-height:1.1}.hide-ruby rt{visibility:hidden}.peek-ruby rt{visibility:visible!important;color:#fbbf24!important}.font-bangla{font-family:Hind Siliguri,sans-serif}.font-japanese{font-family:Noto Sans JP,sans-serif}@keyframes fadeIn{0%{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}.animate-fadeIn{animation:.22s cubic-bezier(.16,1,.3,1) forwards fadeIn}@keyframes bounceSlow{0%,to{transform:translateY(0)}50%{transform:translateY(-4px)}}.animate-bounce-slow{animation:3.5s ease-in-out infinite bounceSlow}::-webkit-scrollbar{width:6px;height:6px}::-webkit-scrollbar-track{background:#0b1120}::-webkit-scrollbar-thumb{background:#1e293b;border-radius:9999px}::-webkit-scrollbar-thumb:hover{background:#334155}</style>
+    <script type="module" crossorigin src="./assets/index-D3Qp-PfY.js"></script>
+  <link rel="manifest" href="./manifest.webmanifest"><script id="vite-plugin-pwa:register-sw" src="./registerSW.js"></script></head>
+  <body class="min-h-screen flex justify-center bg-[#070b14] text-slate-100 antialiased">
+    <!-- Main Mobile & Desktop App Container -->
+    <div id="app-container" class="w-full max-w-md md:max-w-xl lg:max-w-2xl min-h-screen bg-[#0c1222] border-x border-slate-800/60 shadow-2xl flex flex-col relative pb-24">
+      
+      <!-- Top Sticky App Header (Slim & Compact) -->
+      <header class="sticky top-0 z-40 bg-[#0c1222]/95 backdrop-blur-md border-b border-slate-800/80 px-3 py-2.5">
+        <div class="flex items-center justify-between flex-nowrap space-x-1">
+          <div class="flex items-center space-x-1.5 flex-shrink-0">
+            <div class="w-7 h-7 rounded-lg bg-gradient-to-tr from-sky-500 to-emerald-400 flex items-center justify-center font-extrabold text-[#070b14] text-sm shadow-lg shadow-sky-500/15 flex-shrink-0">
+              日
+            </div>
+            <div class="flex items-center space-x-1 flex-shrink-0 whitespace-nowrap">
+              <h1 class="text-[13px] font-extrabold tracking-tight text-white leading-none">できる日本語</h1>
+              <span class="text-[9px] bg-sky-950/80 text-sky-400 border border-sky-800/50 font-bold px-1.5 py-0.5 rounded leading-none">A2-B1</span>
+            </div>
+          </div>
+
+          <div class="flex items-center space-x-1.5">
+            <!-- PWA Install Button -->
+            <button id="pwa-install-btn" onclick="window.triggerPWAInstall()" class="hidden px-2 py-1.5 rounded-lg bg-sky-600 hover:bg-sky-500 text-white border border-sky-500/50 flex items-center space-x-1.5 transition text-xs font-semibold animate-pulse" title="Install App Offline">
+              <span>📥</span>
+              <span class="hidden md:inline">Install</span>
+            </button>
+
+            <!-- Audio Speed Toggle -->
+            <button id="btn-speed" onclick="toggleAudioSpeed()" class="text-xs px-2 py-1 rounded-lg bg-slate-800/80 hover:bg-slate-700 text-slate-300 border border-slate-700/50 flex items-center space-x-1 transition" title="Change Pronunciation Speed">
+              <span class="text-sky-400">⚡</span>
+              <span id="speed-label">0.9x</span>
+            </button>
+
+            <!-- Audio Test Button -->
+            <button onclick="playAudio('日本語の勉強を始めましょう')" class="p-1.5 rounded-lg bg-slate-800/80 hover:bg-slate-700 text-slate-300 border border-slate-700/50 transition" title="Test Audio Pronunciation">
+              <svg class="w-4 h-4 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
+              </svg>
+            </button>
+
+            <!-- Learning Progress Badge -->
+            <div class="text-[11px] px-2 py-1 rounded-lg bg-emerald-950/60 text-emerald-400 border border-emerald-800/50 font-medium flex items-center space-x-1">
+              <span>★</span>
+              <span id="header-learned-count">0</span>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- VIEW 0: DASHBOARD MODE (DEFAULT HOME VIEW) -->
+      <main id="view-dashboard" class="flex-1 p-4 space-y-4 animate-fadeIn">
+        <!-- Injected via JavaScript renderDashboard() -->
+      </main>
+
+      <!-- VIEW 1: WORD LIST MODE -->
+      <main id="view-list" class="hidden flex-1 p-4 space-y-3">
+        <!-- Search & Filter Area (Inside Word List Only) -->
+        <div class="space-y-2">
+          <!-- Search Bar -->
+          <div class="relative">
+            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+              <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              </svg>
+            </div>
+            <input 
+              type="text" 
+              id="search-input" 
+              oninput="handleSearchInput(this.value)"
+              placeholder="Search Kanji, Furigana, English, বাংলা..." 
+              class="w-full pl-9 pr-8 py-2 text-xs rounded-xl bg-slate-900 border border-slate-800 focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500 text-slate-200 placeholder-slate-500 transition shadow-inner"
+            />
+            <button id="search-clear-btn" onclick="clearSearch()" class="hidden absolute inset-y-0 right-0 pr-2.5 flex items-center text-slate-400 hover:text-white">
+              ✕
+            </button>
+          </div>
+
+          <!-- Lesson Selector (Full Width Row) -->
+          <div>
+            <select id="lesson-select" onchange="handleLessonChange(this.value)" class="w-full bg-slate-900 border border-slate-700/80 text-sky-400 font-semibold py-2 px-3 rounded-xl text-xs focus:outline-none focus:border-sky-500 shadow-sm">
+              <option value="1" selected>L1: 新しい一歩 (New Step)</option>
+              <option value="2">L2: 楽しいショッピング (Shopping)</option>
+              <option value="3">L3: 私の目標 (My Goals)</option>
+              <option value="4">L4: 住んでいる町で (In Town)</option>
+              <option value="5">L5: 大変な1日 (A Tough Day)</option>
+              <option value="6">L6: 私の好きなこと (Things I Like)</option>
+              <option value="7">L7: 私の国の年中行事 (Annual Events)</option>
+              <option value="8">L8: この料理、おいしいですよ (Food)</option>
+              <option value="9">L9: すてきなホテルですね (Hotel)</option>
+              <option value="10">L10: 今、よろしいですか (Moment?)</option>
+              <option value="11">L11: 連絡します (Keeping in Touch)</option>
+              <option value="12">L12: 私のおすすめ (Recommendation)</option>
+              <option value="13">L13: どこで習ったんですか (Learn?)</option>
+              <option value="14">L14: どうしたんですか (What Happened?)</option>
+              <option value="15">L15: これから (From Now On)</option>
+            </select>
+          </div>
+
+          <!-- Quick Filter Chips Grid (2x2 / 4-Col Grid for perfect mobile visibility) -->
+          <div class="grid grid-cols-4 gap-1.5 text-xs">
+            <button id="chip-all" onclick="setFilterCategory('all')" class="filter-chip py-1.5 px-2 rounded-xl font-medium text-center bg-sky-500/20 text-sky-300 border border-sky-500/40 text-[11px] truncate">
+              All
+            </button>
+            <button id="chip-fav" onclick="setFilterCategory('fav')" class="filter-chip py-1.5 px-2 rounded-xl font-medium text-center bg-slate-900 text-slate-400 border border-slate-800 hover:border-slate-700 text-[11px] truncate">
+              ★ Bookmarks
+            </button>
+            <button id="chip-due" onclick="setFilterCategory('due')" class="filter-chip py-1.5 px-2 rounded-xl font-medium text-center bg-slate-900 text-slate-400 border border-slate-800 hover:border-slate-700 text-[11px] truncate">
+              ⏰ Due Review
+            </button>
+            <button id="chip-hard" onclick="setFilterCategory('hard')" class="filter-chip py-1.5 px-2 rounded-xl font-medium text-center bg-slate-900 text-slate-400 border border-slate-800 hover:border-slate-700 text-[11px] truncate">
+              🔴 Hard
+            </button>
+          </div>
+        </div>
+
+        <!-- Visibility Controls Bar -->
+        <div class="bg-slate-900/90 border border-slate-800/90 rounded-2xl p-3 shadow-lg shadow-black/20 space-y-2.5">
+          <div class="flex items-center justify-between text-xs">
+            <span id="word-count-badge" class="font-medium text-slate-300">Loading vocabulary...</span>
+            <div class="flex items-center space-x-1 text-[11px] text-slate-400">
+              <span class="text-sky-400">⚙️</span>
+              <span>ভাষা ও ফুরিগানা টগল</span>
+            </div>
+          </div>
+
+          <!-- 4 Switch Controls: Furigana, Romaji, English, Bangla -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-1 border-t border-slate-800/80">
+            <!-- Furigana Switch -->
+            <label class="flex items-center justify-between p-2 rounded-xl bg-slate-800/60 border border-slate-700/50 cursor-pointer select-none hover:bg-slate-800 transition active:scale-[0.98]">
+              <div class="flex items-center space-x-1.5 truncate">
+                <span class="text-xs font-bold text-sky-400">ふ</span>
+                <span class="text-[11px] text-slate-200 font-medium">ফুরিগানা</span>
+              </div>
+              <input type="checkbox" id="toggle-list-furigana" onchange="toggleListFurigana(this.checked)" checked class="sr-only peer">
+              <div class="w-7 h-4 bg-slate-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-3 after:w-3 after:transition-all peer-checked:bg-sky-500 relative flex-shrink-0"></div>
+            </label>
+
+            <!-- Romaji Switch -->
+            <label class="flex items-center justify-between p-2 rounded-xl bg-slate-800/60 border border-slate-700/50 cursor-pointer select-none hover:bg-slate-800 transition active:scale-[0.98]">
+              <div class="flex items-center space-x-1.5 truncate">
+                <span class="text-[10px] font-bold px-1 py-0.5 rounded bg-sky-950 text-sky-300 border border-sky-800/60">Rom</span>
+                <span class="text-[11px] text-slate-200 font-medium">রোমাজি</span>
+              </div>
+              <input type="checkbox" id="toggle-list-romaji" onchange="toggleListRomaji(this.checked)" checked class="sr-only peer">
+              <div class="w-7 h-4 bg-slate-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-3 after:w-3 after:transition-all peer-checked:bg-sky-500 relative flex-shrink-0"></div>
+            </label>
+
+            <!-- English Switch -->
+            <label class="flex items-center justify-between p-2 rounded-xl bg-slate-800/60 border border-slate-700/50 cursor-pointer select-none hover:bg-slate-800 transition active:scale-[0.98]">
+              <div class="flex items-center space-x-1.5 truncate">
+                <span class="text-[10px] font-bold px-1 py-0.5 rounded bg-sky-950 text-sky-300 border border-sky-800/60">EN</span>
+                <span class="text-[11px] text-slate-200 font-medium">ইংরেজি</span>
+              </div>
+              <input type="checkbox" id="toggle-list-english" onchange="toggleListEnglish(this.checked)" checked class="sr-only peer">
+              <div class="w-7 h-4 bg-slate-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-3 after:w-3 after:transition-all peer-checked:bg-sky-500 relative flex-shrink-0"></div>
+            </label>
+
+            <!-- Bangla Switch -->
+            <label class="flex items-center justify-between p-2 rounded-xl bg-slate-800/60 border border-slate-700/50 cursor-pointer select-none hover:bg-slate-800 transition active:scale-[0.98]">
+              <div class="flex items-center space-x-1.5 truncate">
+                <span class="text-[10px] font-bold px-1 py-0.5 rounded bg-emerald-950 text-emerald-300 border border-emerald-800/60 font-bangla">বাং</span>
+                <span class="text-[11px] text-slate-200 font-medium font-bangla">বাংলা</span>
+              </div>
+              <input type="checkbox" id="toggle-list-bangla" onchange="toggleListBangla(this.checked)" checked class="sr-only peer">
+              <div class="w-7 h-4 bg-slate-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-3 after:w-3 after:transition-all peer-checked:bg-emerald-500 relative flex-shrink-0"></div>
+            </label>
+          </div>
+        </div>
+
+        <!-- Vocabulary Cards Container -->
+        <div id="cards-container" class="space-y-2.5">
+          <!-- Cards injected via JavaScript -->
+        </div>
+
+        <!-- Empty State -->
+        <div id="list-empty-state" class="hidden py-16 text-center text-slate-400">
+          <div class="text-4xl mb-2">🔍</div>
+          <p class="text-sm font-medium text-slate-300">No words found</p>
+          <p class="text-xs text-slate-500 mt-1">Try another search keyword or switch lesson filter.</p>
+          <button onclick="resetFilters()" class="mt-4 text-xs px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-sky-400 rounded-lg border border-slate-700 transition">
+            Reset All Filters
+          </button>
+        </div>
+      </main>
+
+      <!-- VIEW 2: FLASHCARD MODE (CLEAN & INTUITIVE) -->
+      <section id="view-flashcard" class="hidden flex-1 p-4 flex flex-col justify-between">
+        <!-- 1. Flashcard Header: Lesson Dropdown (Row 1) + Quick Actions (Row 2) -->
+        <div class="space-y-2 mb-2">
+          <!-- Dedicated Lesson Selector (Full Width Row) -->
+          <div>
+            <select id="fc-lesson-select" onchange="handleFcLessonSelect(this.value)" class="w-full bg-slate-900 border border-slate-700/80 text-sky-400 font-semibold py-2 px-3 rounded-xl text-xs focus:outline-none focus:border-sky-500 shadow-sm">
+              <option value="0">📚 All Lessons (1–15)</option>
+              <option value="1">L1: 新しい一歩 (New Step)</option>
+              <option value="2">L2: 楽しいショッピング (Shopping)</option>
+              <option value="3">L3: 私の目標 (My Goals)</option>
+              <option value="4">L4: 住んでいる町で (In Town)</option>
+              <option value="5">L5: 大変な1日 (A Tough Day)</option>
+              <option value="6">L6: 私の好きなこと (Things I Like)</option>
+              <option value="7">L7: 私の国の年中行事 (Annual Events)</option>
+              <option value="8">L8: この料理、おいしいですよ (Food)</option>
+              <option value="9">L9: すてきなホテルですね (Hotel)</option>
+              <option value="10">L10: 今、よろしいですか (Moment?)</option>
+              <option value="11">L11: 連絡します (Keeping in Touch)</option>
+              <option value="12">L12: 私のおすすめ (Recommendation)</option>
+              <option value="13">L13: どこで習ったんですか (Learn?)</option>
+              <option value="14">L14: どうしたんですか (What Happened?)</option>
+              <option value="15">L15: これから (From Now On)</option>
+            </select>
+          </div>
+
+          <!-- Quick Action Toolbar Row (Well-spaced 5-Col Grid) -->
+          <div class="grid grid-cols-6 gap-1 text-xs">
+            <!-- Shuffle Button -->
+            <button onclick="shuffleFlashcards()" class="py-1.5 px-2 bg-slate-800 hover:bg-slate-750 text-slate-300 rounded-xl border border-slate-700/80 transition flex items-center justify-center space-x-1 font-semibold" title="শাফল করুন (Shuffle)">
+              <span>🔀</span>
+            </button>
+
+            <!-- Furigana Toggle -->
+            <button id="fc-btn-toggle-furigana" onclick="toggleFlashcardSetting('furigana')" class="py-1.5 px-2 bg-slate-800 hover:bg-slate-750 text-sky-400 rounded-xl border border-slate-700/80 text-xs font-bold transition flex items-center justify-center" title="ফুরিগানা চালু/বন্ধ">
+              ふ
+            </button>
+
+            <!-- Romaji Toggle -->
+            <button id="fc-btn-toggle-romaji" onclick="toggleFlashcardSetting('romaji')" class="py-1.5 px-2 bg-slate-800 hover:bg-slate-750 text-sky-400 rounded-xl border border-slate-700/80 text-[11px] font-bold transition flex items-center justify-center" title="রোমাজি চালু/বন্ধ">
+              Rom
+            </button>
+
+            <!-- English Toggle -->
+            <button id="fc-btn-toggle-en" onclick="toggleFlashcardSetting('english')" class="py-1.5 px-2 bg-slate-800 hover:bg-slate-750 text-sky-400 rounded-xl border border-slate-700/80 text-[11px] font-bold transition flex items-center justify-center" title="ইংরেজি অর্থ চালু/বন্ধ">
+              EN
+            </button>
+
+            <!-- Bangla Toggle -->
+            <button id="fc-btn-toggle-bn" onclick="toggleFlashcardSetting('bangla')" class="py-1.5 px-2 bg-slate-800 hover:bg-slate-750 text-emerald-400 rounded-xl border border-slate-700/80 text-[11px] font-bold font-bangla transition flex items-center justify-center" title="বাংলা অর্থ চালু/বন্ধ">
+              বাং
+            </button>
+
+            <!-- Bookmark Button -->
+            <button onclick="toggleCardFavorite(event)" id="fc-star-btn" class="py-1.5 px-2 bg-slate-800 hover:bg-slate-750 text-slate-400 hover:text-amber-400 rounded-xl border border-slate-700/80 text-sm transition flex items-center justify-center" title="বুকমার্ক">
+              ★
+            </button>
+          </div>
+
+          <!-- Progress Bar & Card Counter -->
+          <div class="flex items-center justify-between text-xs text-slate-400 pt-1">
+            <span id="fc-progress-label" class="font-medium text-sky-400">কার্ড ১ / ২৫</span>
+            <div id="fc-deck-srs-summary" class="flex items-center space-x-1.5 text-[10px] font-mono">
+              <!-- Dynamically populated in renderCurrentFlashcard -->
+            </div>
+            <span id="fc-srs-status-pill" class="text-[10px] px-2 py-0.5 rounded-md bg-slate-800 text-slate-400 border border-slate-700">New Word</span>
+          </div>
+          <div class="w-full bg-slate-800/80 rounded-full h-1.5 overflow-hidden">
+            <div id="fc-progress-bar" class="bg-gradient-to-r from-sky-500 to-emerald-400 h-1.5 rounded-full transition-all duration-300" style="width: 5%;"></div>
+          </div>
+        </div>
+
+        <!-- 2. The Interactive Flashcard -->
+        <div class="flex-1 flex flex-col justify-center my-1">
+          <!-- Card Body (Tappable) -->
+          <div id="fc-card-body" onclick="handleCardClick()" class="cursor-pointer bg-slate-900 border-2 border-slate-800 hover:border-sky-500/40 rounded-3xl p-6 shadow-2xl transition-all duration-300 min-h-[290px] flex flex-col justify-between relative overflow-hidden select-text active:scale-[0.99]">
+            
+            <!-- Top Card Header: Lesson Badge & Audio/Copy Buttons -->
+            <div class="flex items-center justify-between w-full">
+              <span id="fc-card-lesson-tag" class="px-2.5 py-0.5 rounded-md text-[11px] font-bold bg-slate-800 text-sky-400 border border-slate-700/60">
+                Lesson 1
+              </span>
+              
+              <div class="flex items-center space-x-1.5">
+                <!-- Audio TTS Speaker Button -->
+                <button onclick="playCurrentCardAudio(event)" class="inline-flex items-center space-x-1 px-2.5 py-1 rounded-full bg-sky-950/70 hover:bg-sky-900 text-sky-300 border border-sky-800/60 text-xs font-medium transition active:scale-95 shadow-sm" title="জাপানি উচ্চারণ শুনুন">
+                  <svg class="w-3.5 h-3.5 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
+                  </svg>
+                  <span>🔊</span>
+                </button>
+
+                <!-- Copy Card Text Button -->
+                <button onclick="copyCurrentFlashcard(event)" class="inline-flex items-center space-x-1 px-2.5 py-1 rounded-full bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700/80 text-xs font-medium transition active:scale-95 shadow-sm" title="কপি করুন (Copy Kanji & Kana)">
+                  <span>📋</span>
+                  <span>কপি</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Middle Section: Japanese Kanji & Readings -->
+            <div class="text-center my-auto py-2">
+              <div id="fc-kanji-display" class="text-3xl sm:text-4xl font-bold tracking-wide text-white mb-2 leading-normal">
+                <ruby>自己紹介<rt>じこしょうかい</rt></ruby>
+              </div>
+              <div id="fc-romaji-display" class="text-xs text-slate-400 font-mono tracking-wider mb-2">
+                [jikoshoukai]
+              </div>
+
+              <!-- Answer Area (Shown only when revealed) -->
+              <div id="fc-answer-container" class="hidden mt-4 pt-4 border-t border-slate-800/80 space-y-2.5 animate-fadeIn">
+                <!-- Bangla Meaning -->
+                <div id="fc-box-bn" class="bg-emerald-950/40 rounded-2xl p-3 border border-emerald-800/60">
+                  <span class="text-[10px] text-emerald-400 font-bold uppercase tracking-wider block mb-0.5 font-bangla">বাংলা অর্থ</span>
+                  <p id="fc-meaning-bn" class="text-lg font-bold text-emerald-300 font-bangla">আত্মপরিচয়</p>
+                </div>
+
+                <!-- English Meaning -->
+                <div id="fc-box-en" class="bg-slate-800/60 rounded-xl p-2.5 border border-slate-700/60">
+                  <span class="text-[10px] text-slate-400 font-bold uppercase tracking-wider block mb-0.5">English</span>
+                  <p id="fc-meaning-en" class="text-sm font-medium text-slate-200">self-introduction</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card Bottom Hint / Call to Action -->
+            <div id="fc-card-hint" class="text-center text-xs text-slate-500 pt-1 flex items-center justify-center space-x-1">
+              <span>👆</span>
+              <span>ট্যাপ করে অর্থ দেখুন (Tap to show answer)</span>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- 3. Bottom Action Controls -->
+        <div class="w-full mt-2">
+          
+          <!-- State A: When Answer is NOT revealed yet -->
+          <div id="fc-unrevealed-controls" class="space-y-2">
+            <!-- Big Friendly "Show Answer" Button -->
+            <button onclick="revealCardAnswer()" class="w-full py-3.5 rounded-2xl bg-gradient-to-r from-sky-500 to-emerald-400 text-slate-950 font-bold text-sm shadow-lg shadow-sky-500/20 active:scale-98 transition flex items-center justify-center space-x-2">
+              <span class="text-base">👁️</span>
+              <span>উত্তর দেখুন / Show Answer</span>
+            </button>
+
+            <!-- Navigation Prev / Next Row -->
+            <div class="flex items-center justify-between px-1">
+              <button onclick="navigateFlashcard(-1)" class="px-3 py-1.5 text-xs rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 transition flex items-center space-x-1 active:scale-95">
+                <span>‹ আগের শব্দ</span>
+              </button>
+              <span class="text-[11px] text-slate-500">বা কার্ডে ট্যাপ করুন</span>
+              <button onclick="navigateFlashcard(1)" class="px-3 py-1.5 text-xs rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 transition flex items-center space-x-1 active:scale-95">
+                <span>পরের শব্দ ›</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- State B: When Answer IS revealed (SRS Rating Buttons) -->
+          <div id="fc-revealed-controls" class="hidden space-y-2">
+            <div class="text-center text-[11px] text-slate-400 font-medium">
+              আপনার কতটা মনে ছিল? (Rate your recall):
+            </div>
+            
+            <div class="grid grid-cols-3 gap-2">
+              <button onclick="handleSrsRating('hard')" class="flex flex-col items-center justify-center p-3 rounded-2xl bg-rose-950/40 hover:bg-rose-900/60 text-rose-300 border border-rose-800/60 transition active:scale-95 shadow-md shadow-rose-950/30">
+                <span class="text-xs font-bold">🔴 কঠিন (Hard)</span>
+                <span class="text-[10px] text-rose-400/80 mt-0.5">১ দিন পর</span>
+              </button>
+              <button onclick="handleSrsRating('good')" class="flex flex-col items-center justify-center p-3 rounded-2xl bg-amber-950/40 hover:bg-amber-900/60 text-amber-300 border border-amber-800/60 transition active:scale-95 shadow-md shadow-amber-950/30">
+                <span class="text-xs font-bold">🟡 মোটামুটি (Good)</span>
+                <span class="text-[10px] text-amber-400/80 mt-0.5">৩ দিন পর</span>
+              </button>
+              <button onclick="handleSrsRating('easy')" class="flex flex-col items-center justify-center p-3 rounded-2xl bg-emerald-950/40 hover:bg-emerald-900/60 text-emerald-300 border border-emerald-800/60 transition active:scale-95 shadow-md shadow-emerald-950/30">
+                <span class="text-xs font-bold">🟢 সহজ (Easy)</span>
+                <span class="text-[10px] text-emerald-400/80 mt-0.5">৭ দিন পর</span>
+              </button>
+            </div>
+
+            <div class="flex items-center justify-between px-1 pt-1">
+              <button onclick="navigateFlashcard(-1)" class="px-2.5 py-1 text-xs rounded-lg bg-slate-800/80 hover:bg-slate-700 text-slate-400 border border-slate-700 transition">
+                ‹ আগের
+              </button>
+              <button onclick="hideCardAnswer()" class="text-xs text-sky-400 hover:text-sky-300 flex items-center space-x-1">
+                <span>🔄 প্রশ্ন দেখুন</span>
+              </button>
+              <button onclick="navigateFlashcard(1)" class="px-2.5 py-1 text-xs rounded-lg bg-slate-800/80 hover:bg-slate-700 text-slate-400 border border-slate-700 transition">
+                পরের ›
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- VIEW 3: QUIZ MODE -->
+      <section id="view-quiz" class="hidden flex-1 p-4 flex flex-col justify-between">
+        
+        <!-- Quiz Playing Screen -->
+        <div id="quiz-screen-play" class="flex-1 flex flex-col justify-between">
+          <div>
+            <!-- Quiz Status Bar -->
+            <div class="flex items-center justify-between text-xs text-slate-400 mb-2">
+              <span id="quiz-question-num" class="font-medium text-sky-400">Question 1 / 10</span>
+              <div class="flex items-center space-x-2">
+                <!-- Live Timer Badge -->
+                <span id="quiz-timer-badge" class="hidden px-2 py-0.5 rounded-full bg-amber-950/80 text-amber-300 border border-amber-700/80 font-bold font-mono text-xs flex items-center space-x-1">
+                  <span>⏳</span>
+                  <span id="quiz-timer-text">15s</span>
+                </span>
+                <span class="flex items-center space-x-1 text-amber-400 font-semibold text-xs">
+                  <span>🔥</span><span id="quiz-streak-count">0</span>
+                </span>
+                <span class="px-2 py-0.5 rounded bg-slate-800 text-emerald-400 border border-slate-700 font-semibold" id="quiz-score-badge">0 / 0</span>
+              </div>
+            </div>
+
+            <!-- Quiz Settings / Controls Bar -->
+            <div class="space-y-2 bg-slate-900/80 p-2.5 rounded-2xl border border-slate-800 mb-3 text-xs">
+              <!-- Row 1: Lesson Scope Selector -->
+              <div class="flex items-center justify-between">
+                <span class="text-[11px] font-bold text-slate-300 font-bangla flex items-center space-x-1">
+                  <span>📖</span>
+                  <span>লেসন নির্বাচন:</span>
+                </span>
+                <select id="quiz-lesson-select" onchange="window.handleQuizLessonChange(this.value)" class="bg-slate-800 text-sky-300 font-bold rounded-xl px-2.5 py-1 text-xs border border-slate-700 focus:outline-none max-w-[210px] truncate">
+                  <option value="0">📚 সকল লেসন (L1–L15)</option>
+                  <option value="1">Lesson 1: 新しい一歩</option>
+                  <option value="2">Lesson 2: 楽しいショッピング</option>
+                  <option value="3">Lesson 3: 私の目標</option>
+                  <option value="4">Lesson 4: 住んでいる町で</option>
+                  <option value="5">Lesson 5: 大変な1日</option>
+                  <option value="6">Lesson 6: 私の好きなこと</option>
+                  <option value="7">Lesson 7: 私の国の年中行事</option>
+                  <option value="8">Lesson 8: この料理、おいしいですよ</option>
+                  <option value="9">Lesson 9: すてきなホテルですね</option>
+                  <option value="10">Lesson 10: 今、よろしいですか</option>
+                  <option value="11">Lesson 11: 連絡します</option>
+                  <option value="12">Lesson 12: 案内します</option>
+                  <option value="13">Lesson 13: どんなスポーツが好きですか</option>
+                  <option value="14">Lesson 14: どんな部屋がいいですか</option>
+                  <option value="15">Lesson 15: どんな映画が好きですか</option>
+                </select>
+              </div>
+
+              <!-- Row 2: Direction & Timer -->
+              <div class="grid grid-cols-2 gap-2 pt-1.5 border-t border-slate-800/80">
+                <select id="quiz-direction" onchange="resetQuiz()" class="bg-slate-800 text-sky-400 font-semibold rounded-xl px-2 py-1 text-xs border border-slate-700 focus:outline-none">
+                  <option value="jp-to-bn">Japanese ➔ বাংলা</option>
+                  <option value="jp-to-en">Japanese ➔ English</option>
+                  <option value="bn-to-jp">বাংলা ➔ Japanese</option>
+                </select>
+
+                <select id="quiz-timer-setting" onchange="window.handleTimerSettingChange(this.value)" class="bg-slate-800 text-amber-400 font-bold rounded-xl px-2 py-1 text-xs border border-slate-700 focus:outline-none">
+                  <option value="0">⏱️ নো টাইম লিমিট</option>
+                  <option value="10">⚡ ১০ সে. (Speed)</option>
+                  <option value="15" selected>⏱️ ১৫ সে. (JLPT Style)</option>
+                  <option value="30">⌛ ৩০ সে. (Relaxed)</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Question Card -->
+            <div class="bg-slate-900 border-2 border-slate-800 rounded-2xl p-6 text-center shadow-xl relative overflow-hidden mb-4">
+              <div class="absolute top-2.5 left-3 text-[10px] uppercase font-bold text-sky-400 tracking-wider" id="quiz-question-tag">
+                Select meaning
+              </div>
+              <span id="quiz-card-lesson-tag" class="absolute top-2.5 right-3 text-[10px] bg-slate-800 text-sky-300 px-2 py-0.5 rounded-md border border-slate-700 font-bold">
+                Lesson 1
+              </span>
+              <button onclick="playQuizAudio()" class="absolute top-2.5 right-3 p-1.5 rounded-full bg-slate-800 hover:bg-slate-700 text-sky-400 transition" title="Listen">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
+                </svg>
+              </button>
+
+              <div class="my-4">
+                <div id="quiz-prompt-ruby" class="text-3xl sm:text-4xl font-bold tracking-wide text-white mb-2">
+                  <ruby>自己紹介<rt>じこしょうかい</rt></ruby>
+                </div>
+                <div id="quiz-prompt-sub" class="text-xs text-slate-400 font-mono tracking-wider">[jikoshoukai]</div>
+              </div>
+            </div>
+
+            <!-- Multiple Choice Options -->
+            <div id="quiz-options-container" class="space-y-2.5">
+              <!-- Injected by JavaScript -->
+            </div>
+          </div>
+
+          <!-- Bottom Explanation / Next Question Box -->
+          <div class="mt-4 pt-2">
+            <div id="quiz-feedback-box" class="hidden mb-3 p-3 rounded-xl border text-xs">
+              <div class="flex items-center justify-between font-semibold mb-1">
+                <span id="quiz-feedback-title">Result</span>
+                <span id="quiz-feedback-details" class="text-[11px] text-slate-400"></span>
+              </div>
+              <div id="quiz-feedback-text" class="text-slate-300"></div>
+            </div>
+
+            <button id="quiz-next-btn" onclick="nextQuizQuestion()" class="hidden w-full py-3 rounded-xl bg-gradient-to-r from-sky-500 to-emerald-400 text-slate-950 font-bold text-sm shadow-lg shadow-sky-500/20 active:scale-98 transition">
+              Next Question →
+            </button>
+          </div>
+        </div>
+
+        <!-- Quiz Completion Result Screen -->
+        <div id="quiz-screen-result" class="hidden flex-1 flex flex-col items-center justify-center text-center py-8">
+          <div class="w-20 h-20 rounded-full bg-emerald-500/20 border-2 border-emerald-500 flex items-center justify-center text-3xl mb-4 shadow-xl shadow-emerald-500/20">
+            🎉
+          </div>
+          <h2 class="text-xl font-bold text-white mb-1">Quiz Completed!</h2>
+          <p class="text-xs text-slate-400 mb-6">お疲れ様でした！ Keep up the fantastic effort.</p>
+
+          <div class="w-full max-w-xs bg-slate-900 border border-slate-800 rounded-2xl p-5 mb-4 space-y-3">
+            <div class="flex justify-between items-center text-xs">
+              <span class="text-slate-400">Final Score</span>
+              <span id="res-score-text" class="text-base font-bold text-emerald-400">9 / 10</span>
+            </div>
+            <div class="flex justify-between items-center text-xs">
+              <span class="text-slate-400">Accuracy</span>
+              <span id="res-accuracy-text" class="font-bold text-sky-400">90%</span>
+            </div>
+            <div class="flex justify-between items-center text-xs">
+              <span class="text-slate-400">Highest Streak</span>
+              <span id="res-streak-text" class="font-bold text-amber-400">🔥 7</span>
+            </div>
+          </div>
+
+          <!-- Dynamic Post-Quiz Recommendations -->
+          <div id="quiz-recommendations-container" class="w-full max-w-xs mb-4 text-left font-bangla">
+            <!-- Injected by JavaScript -->
+          </div>
+
+          <div class="w-full max-w-xs space-y-2">
+            <button onclick="startNewQuiz()" class="w-full py-2.5 rounded-xl bg-gradient-to-r from-sky-500 to-emerald-400 text-slate-950 font-bold text-xs shadow-lg transition active:scale-95">
+              Take Another Quiz
+            </button>
+            <button onclick="switchTab('flashcard')" class="w-full py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold text-xs border border-slate-700 transition">
+              Review in Flashcards
+            </button>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- VIEW 4: CAN-DO / LESSON GOALS MODE -->
+      <section id="view-cando" class="hidden flex-1 p-4 space-y-3">
+        <div class="text-xs text-slate-400 px-1 mb-1">
+          <h2 class="font-bold text-slate-200 text-sm">目次と行動目標 (Curriculum Goals)</h2>
+          <p class="text-[11px] text-slate-500">Official Can-Do competencies for 『できる日本語 初中級』</p>
+        </div>
+
+        <div id="cando-container" class="space-y-2.5">
+          <!-- Injected via JavaScript -->
+        </div>
+      </section>
+
+      <!-- Comprehensive EdTech Footer -->
+      <footer class="mt-8 border-t border-slate-800/80 pt-6 pb-6 px-4 bg-slate-900/60 rounded-t-3xl space-y-3.5 text-center text-xs text-slate-400">
+        <div class="flex items-center justify-center space-x-2">
+          <div class="w-6 h-6 rounded-md bg-gradient-to-tr from-sky-500 to-emerald-400 flex items-center justify-center font-bold text-slate-950 text-xs shadow-md">
+            日
+          </div>
+          <span class="font-bold text-slate-200 text-sm">できる日本語 Vocabulary</span>
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-sky-950 text-sky-400 border border-sky-800/60 font-semibold">A2-B1</span>
+        </div>
+
+        <p class="text-xs text-slate-300 font-medium">
+          Created with ❤️ for Japanese Language Learners
+        </p>
+
+        <div class="flex flex-wrap justify-center gap-1.5 text-[10px]">
+          <span class="px-2 py-0.5 rounded-full bg-slate-800/80 text-sky-300 border border-slate-700/60">JLPT N5-N4</span>
+          <span class="px-2 py-0.5 rounded-full bg-slate-800/80 text-emerald-300 border border-slate-700/60">Audio Pronunciation</span>
+          <span class="px-2 py-0.5 rounded-full bg-slate-800/80 text-amber-300 border border-slate-700/60">SRS Memory System</span>
+          <span class="px-2 py-0.5 rounded-full bg-slate-800/80 text-purple-300 border border-slate-700/60 font-bangla">বাংলা ও English</span>
+        </div>
+
+        <p class="text-[11px] text-slate-500 leading-relaxed max-w-xs mx-auto">
+          একটি আধুনিক ও মডিউলার জাপানি ভাষা শেখার প্ল্যাটফর্ম। ফুরিগানা, রোমাজি, অডিও, ফ্ল্যাশকার্ড ও কুইজ মোড সহ।
+        </p>
+
+        <div class="pt-2 border-t border-slate-800/60 flex items-center justify-center text-[11px] text-slate-500 px-2">
+          <span>© <span id="copyright-year">2026</span> <strong class="text-slate-300">Rifat Ahmed</strong></span>
+        </div>
+      </footer>
+
+      <!-- Bottom Tab Bar -->
+      <nav class="fixed bottom-0 left-0 right-0 max-w-md md:max-w-xl lg:max-w-2xl mx-auto bg-slate-900/95 backdrop-blur-md border-t border-slate-800/80 z-50 flex items-center justify-around py-2 px-1 shadow-2xl">
+        <button id="tab-dashboard" onclick="switchTab('dashboard')" class="tab-btn flex-1 flex flex-col items-center py-1 text-sky-400 transition">
+          <svg class="w-5 h-5 mb-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 00-1-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 00-1 1m-6 0h6" />
+          </svg>
+          <span class="text-[10px] font-semibold">Dashboard</span>
+        </button>
+
+        <button id="tab-list" onclick="switchTab('list')" class="tab-btn flex-1 flex flex-col items-center py-1 text-slate-500 hover:text-slate-300 transition">
+          <svg class="w-5 h-5 mb-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16" />
+          </svg>
+          <span class="text-[10px] font-semibold">Word List</span>
+        </button>
+
+        <button id="tab-flashcard" onclick="switchTab('flashcard')" class="tab-btn flex-1 flex flex-col items-center py-1 text-slate-500 hover:text-slate-300 transition">
+          <svg class="w-5 h-5 mb-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+          </svg>
+          <span class="text-[10px] font-semibold">Flashcards</span>
+        </button>
+
+        <button id="tab-quiz" onclick="switchTab('quiz')" class="tab-btn flex-1 flex flex-col items-center py-1 text-slate-500 hover:text-slate-300 transition">
+          <svg class="w-5 h-5 mb-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+          </svg>
+          <span class="text-[10px] font-semibold">Quiz Mode</span>
+        </button>
+
+        <button id="tab-cando" onclick="switchTab('cando')" class="tab-btn flex-1 flex flex-col items-center py-1 text-slate-500 hover:text-slate-300 transition">
+          <svg class="w-5 h-5 mb-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          <span class="text-[10px] font-semibold">Can-Do</span>
+        </button>
+      </nav>
+
+      <!-- Offline Connectivity Banner -->
+      <div id="offline-banner" class="hidden fixed bottom-20 left-4 right-4 sm:left-auto sm:right-4 max-w-sm z-50 flex items-center gap-2 rounded-xl bg-amber-500 text-slate-950 font-bold px-3 py-2.5 text-xs shadow-xl border border-amber-400 animate-fadeIn">
+        <span class="h-2.5 w-2.5 rounded-full bg-white animate-ping" />
+        <span class="font-bangla">অফলাইন মোড — সম্পূর্ণ অ্যাপটি এখন অফলাইনে চলছে।</span>
+      </div>
+
+      <!-- iOS Safari Installation Help Dialog -->
+      <div id="ios-install-dialog" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4 backdrop-blur-sm">
+        <div class="w-full max-w-xs rounded-2xl bg-slate-900 border border-slate-800 p-5 shadow-2xl space-y-4">
+          <div class="flex items-start justify-between">
+            <h3 class="text-sm font-bold text-white flex items-center space-x-1.5">
+              <span>📱</span>
+              <span>আইফোনে ইনস্টল করুন (iOS)</span>
+            </h3>
+            <button onclick="window.closeIosInstallGuide()" class="text-slate-400 hover:text-slate-200 text-sm font-bold">✕</button>
+          </div>
+          <p class="text-[11px] text-slate-300 leading-relaxed font-bangla">
+            ১. সাফারির নিচে থাকা <strong class="text-sky-400 font-bold">Share (শেয়ার)</strong> বাটনে চাপুন।<br />
+            ২. মেনুটি স্ক্রোল করে নিচে গিয়ে <strong class="text-emerald-400 font-bold">"Add to Home Screen"</strong> চাপুন।<br />
+            ৩. এবার উপরে ডানকোণায় <strong class="text-sky-400 font-bold">Add</strong> চাপলে অ্যাপটি আপনার হোম স্ক্রিনে আইকন হিসেবে ইনস্টল হয়ে যাবে!
+          </p>
+          <button onclick="window.closeIosInstallGuide()" class="w-full py-2 bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs rounded-xl transition">
+            ঠিক আছে
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Complete JavaScript Logic & Complete Master Dataset -->
+  </body>
+</html>

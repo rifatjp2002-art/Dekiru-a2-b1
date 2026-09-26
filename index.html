@@ -108,6 +108,7 @@
             <div class="flex items-center space-x-1 flex-shrink-0 whitespace-nowrap">
               <h1 class="text-[13px] font-extrabold tracking-tight text-white leading-none">できる日本語</h1>
               <span class="text-[9px] bg-sky-950/80 text-sky-400 border border-sky-800/50 font-bold px-1.5 py-0.5 rounded leading-none">A2-B1</span>
+              <span id="header-offline-badge" class="hidden text-[9px] bg-amber-950/80 text-amber-400 border border-amber-700/50 font-bold px-1.5 py-0.5 rounded leading-none font-bangla" title="Offline Mode Active">অফলাইন</span>
             </div>
           </div>
 
@@ -132,9 +133,9 @@
             </button>
 
             <!-- Learning Progress Badge -->
-            <div class="text-[11px] px-2 py-1 rounded-lg bg-emerald-950/60 text-emerald-400 border border-emerald-800/50 font-medium flex items-center space-x-1">
-              <span>★</span>
-              <span id="header-learned-count">0</span>
+            <div class="text-[11px] px-2.5 py-1 rounded-lg bg-slate-800/90 text-amber-300 border border-amber-500/40 font-bold flex items-center space-x-1.5 shadow-sm" title="মোট শেখা বা অনুশীলন করা শব্দ">
+              <span class="text-amber-400">★</span>
+              <span id="header-learned-count" class="text-white font-mono font-bold">0</span>
             </div>
           </div>
         </div>
@@ -325,7 +326,7 @@
             </button>
 
             <!-- Bangla Toggle -->
-            <button id="fc-btn-toggle-bn" onclick="toggleFlashcardSetting('bangla')" class="py-1.5 px-2 bg-slate-800 hover:bg-slate-750 text-emerald-400 rounded-xl border border-slate-700/80 text-[11px] font-bold font-bangla transition flex items-center justify-center" title="বাংলা অর্থ চালু/বন্ধ">
+            <button id="fc-btn-toggle-bn" onclick="toggleFlashcardSetting('bangla')" class="py-1.5 px-2 bg-slate-800 hover:bg-slate-750 text-amber-300 rounded-xl border border-slate-700/80 text-[11px] font-bold font-bangla transition flex items-center justify-center" title="বাংলা অর্থ চালু/বন্ধ">
               বাং
             </button>
 
@@ -388,9 +389,9 @@
               <!-- Answer Area (Shown only when revealed) -->
               <div id="fc-answer-container" class="hidden mt-4 pt-4 border-t border-slate-800/80 space-y-2.5 animate-fadeIn">
                 <!-- Bangla Meaning -->
-                <div id="fc-box-bn" class="bg-emerald-950/40 rounded-2xl p-3 border border-emerald-800/60">
-                  <span class="text-[10px] text-emerald-400 font-bold uppercase tracking-wider block mb-0.5 font-bangla">বাংলা অর্থ</span>
-                  <p id="fc-meaning-bn" class="text-lg font-bold text-emerald-300 font-bangla">আত্মপরিচয়</p>
+                <div id="fc-box-bn" class="bg-amber-950/30 rounded-2xl p-3 border border-amber-600/40">
+                  <span class="text-[10px] text-amber-400 font-bold uppercase tracking-wider block mb-0.5 font-bangla">বাংলা অর্থ</span>
+                  <p id="fc-meaning-bn" class="text-lg font-bold text-amber-300 font-bangla">আত্মপরিচয়</p>
                 </div>
 
                 <!-- English Meaning -->
@@ -701,12 +702,6 @@
           <span class="text-[10px] font-semibold">Can-Do</span>
         </button>
       </nav>
-
-      <!-- Offline Connectivity Banner -->
-      <div id="offline-banner" class="hidden fixed bottom-20 left-4 right-4 sm:left-auto sm:right-4 max-w-sm z-50 flex items-center gap-2 rounded-xl bg-amber-500 text-slate-950 font-bold px-3 py-2.5 text-xs shadow-xl border border-amber-400 animate-fadeIn">
-        <span class="h-2.5 w-2.5 rounded-full bg-white animate-ping" />
-        <span class="font-bangla">অফলাইন মোড — সম্পূর্ণ অ্যাপটি এখন অফলাইনে চলছে।</span>
-      </div>
 
       <!-- iOS Safari Installation Help Dialog -->
       <div id="ios-install-dialog" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4 backdrop-blur-sm">

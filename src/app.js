@@ -241,18 +241,18 @@
     if (showBangla || isRevealed) {
       return `
         <div class="flex items-baseline space-x-2">
-          <span class="text-[10px] font-bold px-1 py-0.5 rounded bg-emerald-950/80 text-emerald-400 border border-emerald-800/50 font-bangla">বাং</span>
-          <span class="text-emerald-400 font-semibold font-bangla">${escapeHtml(item.bn)}</span>
+          <span class="text-[10px] font-bold px-1 py-0.5 rounded bg-amber-950/70 text-amber-300 border border-amber-600/40 font-bangla">বাং</span>
+          <span class="text-amber-300 font-semibold font-bangla text-[13px] tracking-wide">${escapeHtml(item.bn)}</span>
         </div>
         ${!showBangla ? `
-          <button onclick="window.hideCardText(event, ${item.id}, 'bn')" class="text-[11px] text-emerald-600 hover:text-emerald-400 px-1.5 py-0.5 rounded hover:bg-emerald-950 font-bangla transition" title="বাংলা লুকান">✕</button>
+          <button onclick="window.hideCardText(event, ${item.id}, 'bn')" class="text-[11px] text-amber-400 hover:text-amber-200 px-1.5 py-0.5 rounded hover:bg-amber-950/60 font-bangla transition" title="বাংলা লুকান">✕</button>
         ` : ''}
       `;
     } else {
       return `
         <div class="flex items-center space-x-2">
           <span class="text-[10px] font-bold px-1 py-0.5 rounded bg-slate-800 text-slate-400 font-bangla">বাং</span>
-          <button onclick="window.revealCardText(event, ${item.id}, 'bn')" class="text-[11px] text-emerald-400/90 hover:text-emerald-300 bg-emerald-950/40 hover:bg-emerald-900/60 px-2.5 py-1 rounded-lg border border-emerald-800/60 transition inline-flex items-center space-x-1.5 font-bangla">
+          <button onclick="window.revealCardText(event, ${item.id}, 'bn')" class="text-[11px] text-amber-300 hover:text-amber-200 bg-amber-950/40 hover:bg-amber-900/60 px-2.5 py-1 rounded-lg border border-amber-700/60 transition inline-flex items-center space-x-1.5 font-bangla">
             <span>👁️</span> <span>বাংলা অর্থ দেখুন</span>
           </button>
         </div>
@@ -290,7 +290,7 @@
         } else if (srs.level === 'good') {
           srsBadge = `<span class="px-1.5 py-0.5 rounded text-[10px] bg-amber-950/60 text-amber-300 border border-amber-800/50">Good</span>`;
         } else if (srs.level === 'easy') {
-          srsBadge = `<span class="px-1.5 py-0.5 rounded text-[10px] bg-emerald-950/60 text-emerald-300 border border-emerald-800/50">Easy</span>`;
+          srsBadge = `<span class="px-1.5 py-0.5 rounded text-[10px] bg-emerald-950/80 text-emerald-300 border border-emerald-500/50 font-semibold">Easy</span>`;
         }
       }
 
@@ -820,7 +820,7 @@
         <div class="mt-1 space-y-0.5">
           <div><span class="font-bold text-white">${currentQ.kanji}</span> (${currentQ.furigana})</div>
           <div><strong class="text-slate-400">English:</strong> ${currentQ.en}</div>
-          <div><strong class="text-emerald-400">বাংলা:</strong> ${currentQ.bn}</div>
+          <div><strong class="text-amber-300 font-bangla">বাংলা:</strong> <span class="text-amber-100 font-bangla">${currentQ.bn}</span></div>
         </div>
       `;
 
@@ -936,7 +936,7 @@
 
     if (quizDirection === 'bn-to-jp') {
       if (tagEl) tagEl.textContent = 'Select the Japanese word for:';
-      if (rubyEl) rubyEl.innerHTML = `<span class="font-bangla text-emerald-300 text-3xl font-bold">${escapeHtml(q.bn)}</span>`;
+      if (rubyEl) rubyEl.innerHTML = `<span class="font-bangla text-amber-300 text-3xl font-bold">${escapeHtml(q.bn)}</span>`;
       if (subEl) subEl.textContent = q.en;
     } else if (quizDirection === 'jp-to-en') {
       if (tagEl) tagEl.textContent = 'Select the English meaning for:';
@@ -980,7 +980,7 @@
       } else if (quizDirection === 'jp-to-en') {
         label = opt.en;
       } else {
-        label = `<span class="font-bangla font-semibold text-emerald-300 text-sm">${opt.bn}</span> <span class="text-slate-400 text-xs ml-1">(${opt.en})</span>`;
+        label = `<span class="font-bangla font-semibold text-amber-300 text-sm">${opt.bn}</span> <span class="text-slate-400 text-xs ml-1">(${opt.en})</span>`;
       }
 
       return `
@@ -1069,7 +1069,7 @@
         <div class="mt-1 space-y-0.5">
           <div><span class="font-bold text-white">${currentQ.kanji}</span> (${currentQ.furigana})</div>
           <div><strong class="text-slate-400">English:</strong> ${currentQ.en}</div>
-          <div><strong class="text-emerald-400">বাংলা:</strong> ${currentQ.bn}</div>
+          <div><strong class="text-amber-300 font-bangla">বাংলা:</strong> <span class="text-amber-100 font-bangla">${currentQ.bn}</span></div>
         </div>
       `;
 
@@ -1226,7 +1226,7 @@
             </span>
             <h2 class="text-xl font-bold text-white mt-1.5">পড়ার অগ্রগতি ড্যাসবোর্ড</h2>
             <p class="text-xs text-slate-400 mt-0.5 font-bangla">
-              ফ্ল্যাmashtক ও কুইজে আপনার পারফরম্যান্সের ওপর ভিত্তি করে তৈরি ট্র্যাকার
+              ফ্ল্যাশকার্ড ও কুইজে আপনার পারফরম্যান্সের ওপর ভিত্তি করে তৈরি ট্র্যাকার
             </p>
           </div>
           <!-- Overall Circle Progress Pill -->
@@ -1239,7 +1239,7 @@
         <!-- Overall Progress Bar -->
         <div class="mt-4">
           <div class="flex justify-between text-xs text-slate-300 font-medium mb-1 font-bangla">
-            <span>মোট রিভিউ: <strong class="text-emerald-400">${reviewedCount}</strong> / ${totalWords} শব্দ</span>
+            <span>মোট রিভিউ: <strong class="text-sky-400 font-bold font-mono">${reviewedCount}</strong> / ${totalWords} শব্দ</span>
             <span class="text-sky-400 font-bold">${masteryPct}% সম্পূর্ণ</span>
           </div>
           <div class="w-full h-2.5 bg-slate-800 rounded-full overflow-hidden flex shadow-inner">
@@ -1253,18 +1253,21 @@
       <!-- 4 Stat Mastery Cards Grid -->
       <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 font-bangla">
         <!-- Card 1: Easy / Mastered -->
-        <div class="bg-emerald-950/30 border border-emerald-800/50 rounded-2xl p-3.5 shadow-lg relative overflow-hidden">
+        <div class="bg-emerald-950/40 border border-emerald-500/40 rounded-2xl p-3.5 shadow-lg relative overflow-hidden">
           <div class="flex items-center justify-between">
-            <span class="text-xs font-bold text-emerald-400">🟢 মাস্তারি করা</span>
-            <span class="text-[10px] px-1.5 py-0.5 rounded bg-emerald-900/60 text-emerald-300 border border-emerald-700/50 font-mono">
+            <span class="text-xs font-bold text-emerald-300 flex items-center space-x-1">
+              <span>🟢</span>
+              <span>মাস্টারি করা</span>
+            </span>
+            <span class="text-[10px] px-1.5 py-0.5 rounded bg-emerald-900/80 text-emerald-200 border border-emerald-400/50 font-mono font-bold">
               ${totalWords > 0 ? Math.round((easyCount / totalWords) * 100) : 0}%
             </span>
           </div>
           <div class="mt-2 flex items-baseline justify-between">
             <span class="text-2xl font-black text-white">${easyCount}</span>
-            <span class="text-[11px] text-slate-400">টি শব্দ</span>
+            <span class="text-[11px] text-slate-300">টি শব্দ</span>
           </div>
-          <p class="text-[10px] text-emerald-400/80 mt-1">সহজ মনে রাখা শব্দসমূহ</p>
+          <p class="text-[10px] text-emerald-200 font-medium mt-1">সহজ মনে রাখা শব্দসমূহ</p>
         </div>
 
         <!-- Card 2: Good / Learning -->
@@ -1339,7 +1342,7 @@
                       ${item.kanji} ${item.furigana && item.furigana !== item.kanji ? `<span class="text-xs text-sky-400">(${item.furigana})</span>` : ''}
                     </div>
                     <div class="text-[11px] text-slate-300 font-bangla">
-                      ${escapeHtml(item.en)} / <span class="text-emerald-400 font-semibold">${escapeHtml(item.bn)}</span>
+                      ${escapeHtml(item.en)} / <span class="text-amber-300 font-bold font-bangla">${escapeHtml(item.bn)}</span>
                     </div>
                   </div>
                 </div>
@@ -1415,7 +1418,7 @@
                   </span>
                   <span class="text-slate-300 font-medium font-bangla">${ls.reviewed} / ${ls.total} শব্দ পড়া হয়েছে</span>
                 </div>
-                <span class="font-bold font-mono text-emerald-400">${ls.pct}%</span>
+                <span class="font-bold font-mono text-emerald-300">${ls.pct}%</span>
               </div>
               
               <!-- Progress Bar -->
@@ -1427,7 +1430,7 @@
 
               <div class="flex items-center justify-between mt-1 text-[10px] text-slate-400 font-bangla">
                 <div class="flex space-x-2">
-                  <span class="text-emerald-400 font-semibold">🟢 ${ls.easy}</span>
+                  <span class="text-emerald-300 font-semibold">🟢 ${ls.easy}</span>
                   <span class="text-amber-400 font-semibold">🟡 ${ls.good}</span>
                   <span class="text-rose-400 font-semibold">🔴 ${ls.hard}</span>
                 </div>
@@ -1634,7 +1637,7 @@
     const fcBnBtn = document.getElementById('fc-btn-toggle-bn');
     if (fcBnBtn) {
       fcBnBtn.className = showBangla
-        ? 'py-1.5 px-2 bg-emerald-950/80 text-emerald-400 border border-emerald-700/80 rounded-xl text-[11px] font-bold font-bangla transition flex items-center justify-center shadow-sm'
+        ? 'py-1.5 px-2 bg-amber-950/80 text-amber-300 border border-amber-600/80 rounded-xl text-[11px] font-bold font-bangla transition flex items-center justify-center shadow-sm'
         : 'py-1.5 px-2 bg-slate-800 hover:bg-slate-750 text-slate-500 border border-slate-700/80 rounded-xl text-[11px] font-bold font-bangla transition flex items-center justify-center line-through';
     }
   }
@@ -1953,13 +1956,22 @@
     });
 
     // 4. Online / Offline state indicators
-    const banner = document.getElementById('offline-banner');
+    const offlineBadge = document.getElementById('header-offline-badge');
+    let hasNotifiedOffline = false;
     
     function updateOnlineStatus() {
       if (navigator.onLine) {
-        if (banner) banner.classList.add('hidden');
+        if (offlineBadge) offlineBadge.classList.add('hidden');
+        if (hasNotifiedOffline) {
+          showToast('🌐 ইন্টারনেট পুনঃসংযুক্ত হয়েছে');
+          hasNotifiedOffline = false;
+        }
       } else {
-        if (banner) banner.classList.remove('hidden');
+        if (offlineBadge) offlineBadge.classList.remove('hidden');
+        if (!hasNotifiedOffline) {
+          showToast('📡 অফলাইন মোড — ডেটা ও ফিচার প্রস্তুত');
+          hasNotifiedOffline = true;
+        }
       }
     }
 
